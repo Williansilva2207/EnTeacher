@@ -1,0 +1,120 @@
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 45%, #f3e8ff 100%);
+  padding: 2rem;
+}
+
+.authCard {
+  width: min(520px, 100%);
+  background: white;
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.brandIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #3b2a7c 0%, #2d1b69 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.brandTitle {
+  font-size: 1.75rem;
+  margin: 0;
+  color: #1f2937;
+}
+
+.brandSubtitle {
+  margin: 0.25rem 0 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.toggleGroup {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  border-radius: 9999px;
+  background: #f3f4f6;
+  padding: 0.25rem;
+}
+
+.toggleButton {
+  flex: 1;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 9999px;
+  background: transparent;
+  color: #4b5563;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.activeToggle {
+  background: linear-gradient(135deg, #3b2a7c 0%, #2d1b69 100%);
+  color: white;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.label {
+  display: grid;
+  gap: 0.5rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #d1d5db;
+  background: #f8fafc;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: none;
+  border-radius: 0.85rem;
+  background: linear-gradient(135deg, #3b2a7c 0%, #2d1b69 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.submitButton:hover {
+  filter: brightness(1.05);
+}

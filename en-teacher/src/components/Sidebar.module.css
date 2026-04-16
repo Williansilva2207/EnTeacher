@@ -1,0 +1,62 @@
+.sidebar {
+  width: 12rem;
+  background: linear-gradient(to bottom, #3b2a7c, #2d1b69);
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.header {
+  text-align: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #bfdbfe;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.menuItem {
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+  color: #dbeafe;
+}
+
+.menuItem:hover {
+  color: white;
+  border-bottom-color: #93c5fd;
+}
+
+.menuItem.active {
+  border-bottom-color: #fde047;
+  color: #fde047;
+}
+
+.footer {
+  margin-top: auto;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #bfdbfe;
+  text-align: center;
+}

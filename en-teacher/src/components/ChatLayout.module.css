@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sectionLabel {
+  text-transform: uppercase;
+  color: #6366f1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.subtitle {
+  color: #4b5563;
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.status {
+  padding: 0.75rem 1rem;
+  border-radius: 9999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.chatCard {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 620px;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  box-shadow: 0 24px 72px rgba(15, 23, 42, 0.08);
+}
+
+.chatMessages {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.message {
+  max-width: 72%;
+  padding: 1rem 1.25rem;
+  border-radius: 1.5rem;
+  line-height: 1.7;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+}
+
+.userMessage {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.assistantMessage {
+  align-self: flex-start;
+  background: #f8fafc;
+  color: #111827;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.messageLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.8;
+  margin-bottom: 0.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.scrollAnchor {
+  height: 1px;
+}
+
+.inputArea {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem 1.25rem;
+  border-top: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.input {
+  flex: 1;
+  min-height: 3.25rem;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  padding: 0.95rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  background: grey;
+}
+
+.input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.sendButton {
+  min-width: 6rem;
+  border: none;
+  border-radius: 9999px;
+  background: #4338ca;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0 1.25rem;
+}
+
+.sendButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
