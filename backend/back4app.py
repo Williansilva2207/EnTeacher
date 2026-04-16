@@ -16,33 +16,6 @@ HEADERS = {
     "Content-Type": "application/json"
 }
 
-
-async def create_todo(title: str, is_completed: bool = False):
-    payload = {
-        "title": title,
-        "isCompleted": is_completed
-    }
-
-    async with httpx.AsyncClient() as client:
-        response = await client.post(
-            BASE_URL,
-            json=payload,
-            headers=HEADERS
-        )
-
-    return response.json()
-
-
-async def get_todos():
-    async with httpx.AsyncClient() as client:
-        response = await client.get(
-            BASE_URL,
-            headers=HEADERS
-        )
-
-    return response.json()
-
-
 async def create_conversation(messages: list[dict]):
     payload = {
         "messages": messages

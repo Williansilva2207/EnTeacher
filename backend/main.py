@@ -1,12 +1,10 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from back4app import create_todo, get_todos, create_conversation, get_conversation, update_conversation, delete_conversation
+from back4app import create_conversation, get_conversation, update_conversation, delete_conversation
 from services.ai_manager import get_ai_response
-from pydantic import BaseModel
-from typing import Optional
+from schema.chatRequest import ChatRequest
 
 app = FastAPI()
-
 
 app.add_middleware(
     CORSMiddleware,
@@ -15,18 +13,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-class ChatRequest(BaseModel):
-    message: str
-    conversation_id: Optional[str] = None
-
-@app.post("/todos")
-async def create(title: str, is_completed: bool = False):
-    return await create_todo(title, is_completed)
-
-@app.get("/todos")
-async def list_todos():
-    return await get_todos()
 
 @app.get("/conversation/{conversation_id}")
 async def conversation(conversation_id: str):
