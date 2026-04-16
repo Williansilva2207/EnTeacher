@@ -83,3 +83,15 @@ async def update_conversation(object_id: str, messages: list[dict]):
         )
 
     return response.json()
+
+
+async def delete_conversation(object_id: str):
+    url = f"{BASE_URL_CONVERSATION}/{object_id}"
+    
+    async with httpx.AsyncClient() as client:
+        response = await client.delete(
+            url,
+            headers=HEADERS
+        )
+
+    return response.json()
