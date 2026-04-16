@@ -8,7 +8,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   const menuItems = [
-    { name: 'Aulas', href: '/home' },
+    { name: 'Aulas', href: '/' },
     { name: 'Dicionário', href: '/dictionary' },
     { name: 'Desempenho', href: '/performance' },
   ];

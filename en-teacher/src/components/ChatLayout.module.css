@@ -35,14 +35,35 @@
   line-height: 1.6;
 }
 
-.status {
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.clearButton {
   padding: 0.75rem 1rem;
   border-radius: 9999px;
-  background: #eef2ff;
-  color: #4338ca;
-  font-weight: 700;
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  font-weight: 600;
   font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
   white-space: nowrap;
+}
+
+.clearButton:hover {
+  background: #fecaca;
+  color: #7f1d1d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(153, 27, 27, 0.15);
+}
+
+.clearButton:active {
+  transform: translateY(0);
 }
 
 .chatCard {

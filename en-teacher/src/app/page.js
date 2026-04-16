@@ -1,99 +1,59 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import Sidebar from '@/components/Sidebar';
+import ModuleCard from '@/components/ModuleCard';
 import styles from './page.module.css';
 
-export default function AuthLandingPage() {
-  const [mode, setMode] = useState('login');
-  const [form, setForm] = useState({ email: '', password: '', name: '' });
-  const router = useRouter();
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    router.push('/home');
-  };
+export default function HomePage() {
+  const basicModules = [
+    { id: 1, title: 'Chat Para Basic 1', color: 'blue', icon: '📚', href: '/modules/basic1', completed: 'walking' },
+    { id: 2, title: 'Chat Para Basic 2', color: 'indigo', icon: '📖', href: '/modules/basic2', completed: 'no' },
+    { id: 3, title: 'Chat Para Intermediary 1', color: 'purple', icon: '🎓', href: '/modules/intermediary1', completed: 'no' },
+  ];
 
   return (
-    <div className={styles.pageWrapper}>
-      <div className={styles.authCard}>
-        <div className={styles.brand}>
-          <div className={styles.brandIcon}>EN</div>
-          <div>
-            <h1 className={styles.brandTitle}>EN Teacher</h1>
-            <p className={styles.brandSubtitle}>Registre-se ou faça login para começar.</p>
+    <div className={styles.container}>
+      <Sidebar />
+      <main className={styles.main}>
+        <div className={styles.header}>
+          <div className={styles.headerTop}>
+            <div className={styles.logo}>EN</div>
+            <h1 className={styles.title}>Teacher</h1>
           </div>
+          <p className={styles.subtitle}>Bem-vindo ao seu aprendizado de inglês</p>
         </div>
 
-        <div className={styles.toggleGroup}>
-          <button
-            type="button"
-            className={`${styles.toggleButton} ${mode === 'login' ? styles.activeToggle : ''}`}
-            onClick={() => setMode('login')}
-          >
-            Login
-          </button>
-          <button
-            type="button"
-            className={`${styles.toggleButton} ${mode === 'register' ? styles.activeToggle : ''}`}
-            onClick={() => setMode('register')}
-          >
-            Register
-          </button>
+        <div className={styles.modulesGrid}>
+          {basicModules.map((module) => (
+            <ModuleCard
+              key={module.id}
+              title={module.title}
+              color={module.color}
+              icon={module.icon}
+              href={module.href}
+              isCompleted={module.completed}
+            />
+          ))}
         </div>
 
-        <form className={styles.form} onSubmit={handleSubmit}>
-          {mode === 'register' && (
-            <label className={styles.label}>
-              Nome completo
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                className={styles.input}
-                placeholder="Seu nome"
-                required
-              />
-            </label>
-          )}
-
-          <label className={styles.label}>
-            Email
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              className={styles.input}
-              placeholder="seu@email.com"
-              required
-            />
-          </label>
-
-          <label className={styles.label}>
-            Senha
-            <input
-              type="password"
-              name="password"
-              value={form.password}
-              onChange={handleChange}
-              className={styles.input}
-              placeholder="********"
-              required
-            />
-          </label>
-
-          <button type="submit" className={styles.submitButton}>
-            {mode === 'login' ? 'Entrar' : 'Registrar'}
-          </button>
-        </form>
-      </div>
+        <div className={styles.infoSection}>
+          <h2 className={styles.infoTitle}>Como funciona</h2>
+          <ul className={styles.infoList}>
+            <li className={styles.infoItem}>
+              <span className={styles.infoBullet}>→</span>
+              <span className={styles.infoText}>Comece com os módulos básicos e progresse gradualmente</span>
+            </li>
+            <li className={styles.infoItem}>
+              <span className={styles.infoBullet}>→</span>
+              <span className={styles.infoText}>Complete as aulas e teste seus conhecimentos</span>
+            </li>
+            <li className={styles.infoItem}>
+              <span className={styles.infoBullet}>→</span>
+              <span className={styles.infoText}>Acompanhe seu desempenho nas estatísticas</span>
+            </li>
+          </ul>
+        </div>
+      </main>
     </div>
   );
 }

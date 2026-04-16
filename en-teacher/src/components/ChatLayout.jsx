@@ -113,6 +113,27 @@ export default function ChatLayout({ title, subtitle, initialMessages = [] }) {
     }
   };
 
+  const handleClearHistory = async () => {
+    if (!confirm('Tem certeza que deseja apagar todo o histórico de conversa? Esta ação não pode ser desfeita.')) {
+      return;
+    }
+
+    try {
+      if (conversationId) {
+        await fetch(`http://127.0.0.1:8001/conversation/${conversationId}`, {
+          method: 'DELETE',
+        });
+      }
+    } catch (error) {
+      console.warn('Erro ao deletar conversa no backend:', error);
+    }
+
+    setMessages([]);
+    setDraft('');
+    setConversationId(null);
+    localStorage.removeItem('conversation_id');
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -121,7 +142,18 @@ export default function ChatLayout({ title, subtitle, initialMessages = [] }) {
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.subtitle}>{subtitle}</p>
         </div>
-        <div className={styles.status}>Pronto para integrar IA</div>
+        <div className={styles.headerActions}>
+          
+          {messages.length > 0 && (
+            <button 
+              onClick={handleClearHistory}
+              className={styles.clearButton}
+              title="Apagar todo o histórico de conversa"
+            >
+              🗑️ Limpar histórico
+            </button>
+          )}
+        </div>
       </div>
 
       <div className={styles.chatCard}>

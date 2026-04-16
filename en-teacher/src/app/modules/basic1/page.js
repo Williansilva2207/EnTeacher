@@ -9,12 +9,7 @@ export default function Basic1Page() {
     {
       id: 'assistant-1',
       role: 'assistant',
-      text: 'Olá! Vamos praticar inglês básico usando este chat. Pergunte algo sobre saudações, cores ou família.',
-    },
-    {
-      id: 'assistant-2',
-      role: 'assistant',
-      text: 'Dica: descreva a situação em inglês e eu ajudarei com frases e correções.',
+      text: 'Olá! Vamos praticar inglês básico usando este chat. Ele apenas falará em inglês.',
     },
   ];
 
