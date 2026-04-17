@@ -18,7 +18,7 @@
 
 ## Descrição do Caso de Uso
 
-**Um estudante brasileiro acessa a plataforma, escolhe um módulo de inglês (básico ou intermediário) e inicia uma conversa com o Professor GPT. O assistente responde sempre em inglês, adaptando o nível de complexidade ao contexto. O aluno pode consultar o dicionário integrado para entender palavras novas e acompanhar seu progresso pela página de desempenho.**
+**Um estudante brasileiro acessa a plataforma, escolhe um módulo de inglês (básico ou intermediário) e inicia uma conversa com o Professor IA. O assistente responde sempre em inglês, adaptando o nível de complexidade ao contexto. O aluno pode consultar o dicionário integrado para entender palavras novas e acompanhar seu progresso pela página de desempenho.**
 
 ---
 
@@ -157,7 +157,9 @@ npm run dev
 O front-end estará disponível em: `http://localhost:3000`
 
 ---
-
+### Acesso Direto
+> https://centro-ia-selecao-estagiario-fullst-pied.vercel.app/
+---
 ## Explicação de Como a IA Foi Integrada
 
 A IA é o núcleo funcional da aplicação. Ela é integrada por meio de uma arquitetura de **cascade com fallback automático**:
