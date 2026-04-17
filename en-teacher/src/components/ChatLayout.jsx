@@ -21,7 +21,7 @@ export default function ChatLayout({ title, subtitle, initialMessages = [] }) {
 
   const loadConversation = async (id) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8001/conversation/${id}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/conversation/${id}`);
       if (!response.ok) {
         if (response.status === 404) {
           localStorage.removeItem('conversation_id');
@@ -64,7 +64,7 @@ export default function ChatLayout({ title, subtitle, initialMessages = [] }) {
     setSending(true);
 
     try {
-      const response = await fetch('http://127.0.0.1:8001/chat', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ export default function ChatLayout({ title, subtitle, initialMessages = [] }) {
 
     try {
       if (conversationId) {
-        await fetch(`http://127.0.0.1:8001/conversation/${conversationId}`, {
+        await fetch(`${process.env.NEXT_PUBLIC_API_URL}/conversation/${conversationId}`, {
           method: 'DELETE',
         });
       }
