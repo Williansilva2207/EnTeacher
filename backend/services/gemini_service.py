@@ -55,7 +55,9 @@ async def gemini_generate(messages: list[dict]) -> str:
                 if "404" in err_str:
                     print(f"LOG: Modelo {model_id} não encontrado. Pulando...")
                     break 
-                
+                if any(code in err_str for code in ["429", "resource_exhausted", "quota", "rate limit"]):
+                    print(f"LOG: 429 no {model_id}. Indo para próximo modelo imediatamente.")
+                    break
                 if any(code in err_str for code in ["429", "503", "500"]):
                     wait_time = 2 * (attempt + 1)
                     print(f"LOG: Limite ou erro no {model_id}. Aguardando {wait_time}s...")
