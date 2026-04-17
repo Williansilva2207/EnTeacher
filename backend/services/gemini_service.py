@@ -30,8 +30,7 @@ async def gemini_generate(messages: list[dict]) -> str:
 
     model_cascade = [
         "gemini-3-flash-preview",      
-        "gemini-2.0-flash",            
-        "gemini-2.0-flash-lite"        
+        "gemini-2.0-flash"                   
     ]
     config = types.GenerateContentConfig(
         system_instruction=SYSTEM_PROMPT,
