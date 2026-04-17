@@ -211,6 +211,7 @@ O aluno acessa `/modules/basic1`, visualiza o conteúdo introdutório e pode abr
 - **Speech-to-text e text-to-speech** — permitir conversas por voz com o professor AI.
 - **Personalização de nível** — onboarding com teste de nível e adaptação automática do conteúdo.
 - **RAG com materiais didáticos** — indexar livros ou artigos para o professor citar fontes contextualizadas.
+-  **Diminuição de Latência** — Ao realizar o fallback para a AI do Cohere, há uma latência significativa.
 - **Gamificação** — pontos e conquistas .
 - **Deploy em produção** — containerização com Docker.
 - **Painel de administração** — para gerenciar módulos, conteúdo e usuários.
