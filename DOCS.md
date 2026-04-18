@@ -216,4 +216,5 @@ O aluno acessa `/modules/basic1`, visualiza o conteúdo introdutório e pode abr
 -  **Diminuição de Latência** — Ao realizar o fallback para a AI do Cohere, há uma latência significativa.
 - **Gamificação** — pontos e conquistas .
 - **Deploy em produção** — containerização com Docker.
+- **Celular** - Ser um site responsivo.
 - **Painel de administração** — para gerenciar módulos, conteúdo e usuários.
